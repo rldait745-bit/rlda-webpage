@@ -1,3 +1,4 @@
+
 :root {
   /* Primitive Color Tokens */
   --color-white: rgba(255, 255, 255, 1);
@@ -1124,6 +1125,7 @@ body {
   background: var(--color-bg-3);
 }
 
+
 /* Objectives Section - Fixed to ensure visibility */
 .objectives-section {
   background: var(--color-surface);
@@ -1131,7 +1133,128 @@ body {
   padding: 2rem;
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--color-card-border);
-  min-height: 500px; /* Ensure minimum height */
+  min-height: 500px;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.section-header h3 {
+  font-size: 2rem;
+  color: var(--railway-blue) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Fixed Objectives Grid - Ensure proper display */
+.objectives-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  min-height: 400px;
+  visibility: visible !important;
+}
+
+.objective-card {
+  background: #f8fafc !important; /* Solid background instead of variable */
+  border-radius: var(--radius-base);
+  padding: 1.5rem;
+  display: flex !important;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0 !important;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+  width: 100%;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.objective-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(135deg, #003f7f 0%, #1a237e 100%);
+  transition: width 0.3s ease;
+}
+
+.objective-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: #f1f5f9 !important;
+  box-shadow: 0 15px 30px rgba(0, 63, 127, 0.2);
+}
+
+.objective-card:hover::before {
+  width: 6px;
+}
+
+.objective-number {
+  background: linear-gradient(135deg, #003f7f 0%, #1a237e 100%);
+  color: white !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  flex-shrink: 0;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+}
+
+.objective-card:hover .objective-number {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.objective-content {
+  flex-grow: 1;
+}
+
+.objective-content h4 {
+  font-size: 1.1rem;
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 0.5rem;
+  color: #003f7f !important;
+  transition: color 0.3s ease;
+}
+
+.objective-card:hover .objective-content h4 {
+  color: #1a237e !important;
+}
+
+.objective-content p {
+  color: #64748b !important;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.objective-card:hover .objective-content p {
+  color: #475569 !important;
+}
+
+/*Objectives Section - Fixed to ensure visibility
+.objectives-section {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-card-border);
+  min-height: 500px; /* Ensure minimum height 
 }
 
 .section-header {
@@ -1148,13 +1271,13 @@ body {
   gap: 1rem;
 }
 
-/* Fixed Objectives Grid - Ensure proper display */
+/* Fixed Objectives Grid - Ensure proper display 
 .objectives-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
   width: 100%;
-  min-height: 400px; /* Ensure minimum height */
+  min-height: 400px; /* Ensure minimum height 
 }
 
 .objective-card {
@@ -1196,7 +1319,7 @@ body {
 
 .objective-number {
   background: var(--gradient-primary);
-  color: white;
+  color: rgb(223, 219, 219);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -1239,7 +1362,7 @@ body {
 .objective-card:hover .objective-content p {
   color: var(--color-text);
 }
-
+*/
 /* Sidebar */
 .sidebar {
   position: sticky;
